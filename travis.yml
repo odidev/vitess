@@ -23,11 +23,13 @@
 # See: https://docs.travis-ci.com/user/docker/
 
 dist: focal
-arch: arm64-graviton2
-virt: vm
-group: edge
-      
 sudo: required
+
+jobs:
+  include:
+    - arch: arm64-graviton2
+      virt: vm
+      group: edge
 
 services:
   - docker
