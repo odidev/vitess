@@ -28,7 +28,7 @@ import (
 )
 
 var (
-	bufferEnabled       = flag.Bool("enable_buffer", false, "Enable buffering (stalling) of primary traffic during failovers.")
+	bufferEnabled       = flag.Bool("enable_buffer", true, "Enable buffering (stalling) of primary traffic during failovers.")
 	bufferEnabledDryRun = flag.Bool("enable_buffer_dry_run", false, "Detect and log failover events, but do not actually buffer requests.")
 
 	bufferWindow                  = flag.Duration("buffer_window", 10*time.Second, "Duration for how long a request should be buffered at most.")
