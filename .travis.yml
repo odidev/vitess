@@ -74,6 +74,5 @@ script:
   - curl -L https://github.com/coreos/etcd/releases/download/v3.3.10/etcd-v3.3.10-linux-amd64.tar.gz | tar -zxC dist
   - mv dist/etcd-v3.3.10-linux-amd64/{etcd,etcdctl} bin/
   - go mod download
-  -  go install golang.org/x/tools/cmd/goimports@latest
-  - make tools
-  - eatmydata -- make unit_test
+  - go install golang.org/x/tools/cmd/goimports@latest
+  - make tools && eatmydata -- make unit_test
