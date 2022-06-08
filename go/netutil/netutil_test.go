@@ -160,7 +160,6 @@ func TestResolveIPv4Addrs(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		t.Errorf("inside range cases")
 		t.Run(c.address, func(t *testing.T) {
 			got, err := ResolveIPv4Addrs(c.address)
 			if (err != nil) != c.expectedError {
