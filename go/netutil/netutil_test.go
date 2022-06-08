@@ -20,7 +20,6 @@ import (
 	"fmt"
 	"math/rand"
 	"net"
-	"reflect"
 	"testing"
 )
 
