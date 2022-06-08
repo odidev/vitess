@@ -161,7 +161,7 @@ func TestResolveIPv4Addrs(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(c.address, func(t *testing.T) {
-			c.expected, err := ResolveIPv4Addrs(c.address)
+			got, err := ResolveIPv4Addrs(c.address)
 			if (err != nil) != c.expectedError {
 				t.Errorf("expected error but got: %v", err)
 			}
