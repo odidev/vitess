@@ -143,7 +143,7 @@ func TestResolveIPv4Addrs(t *testing.T) {
 	}{
 		{
 			address:  "localhost:3306",
-			expected: []string{"127.0.0.1:3306"},
+			expected: []string{"127.0.1.1:3306 127.0.1.1:3306 127.0.0.1:3306"},
 		},
 		{
 			address:       "127.0.0.256:3306",
@@ -160,6 +160,7 @@ func TestResolveIPv4Addrs(t *testing.T) {
 	}
 
 	for _, c := range cases {
+		t.Errorf("inside range cases")
 		t.Run(c.address, func(t *testing.T) {
 			got, err := ResolveIPv4Addrs(c.address)
 			if (err != nil) != c.expectedError {
